@@ -94,6 +94,26 @@ x<-seq(30,95,1)
 qqplot(qt(ppoints(250), df = 5), x, xlab = "Q-Q plot for tdsn")
 qqline(x)
 
+
+EPIDesert <-E[!Desert]
+EPIDesert <- EPIDesert[!is.na(EPIDesert)]
+hist(EPIDesert)
+
+hist(EPIDesert, seq(30., 95., 1.0), prob=TRUE)
+lines(density(EPIDesert,na.rm=TRUE,bw=1.)) 
+rug(EPIDesert)
+plot(ecdf(EPIDesert), do.points=FALSE, verticals=TRUE)
+
+par(pty="s")
+qqnorm(EPIDesert)
+qqline(EPIDesert)
+x<-seq(30,95,1)
+qqplot(qt(ppoints(250), df = 5), x, xlab = "Q-Q plot for tdsn")
+qqline(x)
+
+
+
+
 EPIEurope <-E[EPI_regions != "Europe"]
 EPIEurope
 EPIEurope <- EPIEurope[!is.na(EPIEurope)]
