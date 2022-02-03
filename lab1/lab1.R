@@ -26,7 +26,7 @@ BIODIVERSITY
 tf <- is.na(BIODIVERSITY)
 B <- BIODIVERSITY[!tf]
 
-hist(B, seq(0., 100., 5.0), prob=TRUE)
+hist(B, seq(0., 100., 2.0), prob=TRUE)
 lines(density(B,na.rm=TRUE,bw=1.)) 
 rug(B)
 plot(ecdf(B), do.points=FALSE, verticals=TRUE)
@@ -34,7 +34,7 @@ plot(ecdf(B), do.points=FALSE, verticals=TRUE)
 par(pty="s")
 qqnorm(B)
 qqline(B)
-x<-seq(0., 100., 5.0)
+x<-seq(0., 100., 2.0)
 qqplot(qt(ppoints(250), df = 5), x, xlab = "Q-Q plot for tdsn")
 qqline(x)
 
@@ -42,7 +42,7 @@ CLIMATE
 tf <- is.na(CLIMATE)
 C <- CLIMATE[!tf]
 
-hist(C, seq(0., 100., 5.0), prob=TRUE)
+hist(C, seq(0., 100., 3.0), prob=TRUE)
 lines(density(C,na.rm=TRUE,bw=1.)) 
 rug(C)
 plot(ecdf(C), do.points=FALSE, verticals=TRUE)
@@ -50,7 +50,7 @@ plot(ecdf(C), do.points=FALSE, verticals=TRUE)
 par(pty="s")
 qqnorm(C)
 qqline(C)
-x<-seq(0., 100., 5.0)
+x<-seq(0., 100., 3.0)
 qqplot(qt(ppoints(250), df = 5), x, xlab = "Q-Q plot for tdsn")
 qqline(x)
 
