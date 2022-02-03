@@ -34,7 +34,7 @@ plot(ecdf(B), do.points=FALSE, verticals=TRUE)
 par(pty="s")
 qqnorm(B)
 qqline(B)
-x<-seq(30,95,1)
+x<-seq(0., 100., 5.0)
 qqplot(qt(ppoints(250), df = 5), x, xlab = "Q-Q plot for tdsn")
 qqline(x)
 
@@ -50,7 +50,7 @@ plot(ecdf(C), do.points=FALSE, verticals=TRUE)
 par(pty="s")
 qqnorm(C)
 qqline(C)
-x<-seq(30,95,1)
+x<-seq(0., 100., 5.0)
 qqplot(qt(ppoints(250), df = 5), x, xlab = "Q-Q plot for tdsn")
 qqline(x)
 
@@ -62,3 +62,41 @@ qqplot(B, ECOSYSTEM[!(is.na(ECOSYSTEM))])
 boxplot(C, ENVHEALTH[!(is.na(ENVHEALTH))])
 
 #Exercise 2
+EPILand<-E[!Landlock]
+Eland <- EPILand[!is.na(EPILand)]
+hist(Eland)
+
+hist(Eland, seq(30., 95., 1.0), prob=TRUE)
+lines(density(Eland,na.rm=TRUE,bw=1.)) 
+rug(Eland)
+plot(ecdf(Eland), do.points=FALSE, verticals=TRUE)
+
+par(pty="s")
+qqnorm(Eland)
+qqline(Eland)
+x<-seq(30,95,1)
+qqplot(qt(ppoints(250), df = 5), x, xlab = "Q-Q plot for tdsn")
+qqline(x)
+
+EPIWater<-E[!No_surface_water]
+Ewater <- EPIWater[!is.na(EPIWater)]
+hist(Ewater)
+
+hist(Ewater, seq(30., 95., 1.0), prob=TRUE)
+lines(density(Ewater,na.rm=TRUE,bw=1.)) 
+rug(Ewater)
+plot(ecdf(Ewater), do.points=FALSE, verticals=TRUE)
+
+par(pty="s")
+qqnorm(Ewater)
+qqline(Ewater)
+x<-seq(30,95,1)
+qqplot(qt(ppoints(250), df = 5), x, xlab = "Q-Q plot for tdsn")
+qqline(x)
+
+EPIEurope <-E[EPI_regions != "Europe"]
+EPIEurope
+EPIEurope <- EPIEurope[!is.na(EPIEurope)]
+EPIEurope
+
+
