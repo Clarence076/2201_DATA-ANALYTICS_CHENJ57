@@ -54,12 +54,11 @@ x<-seq(30,95,1)
 qqplot(qt(ppoints(250), df = 5), x, xlab = "Q-Q plot for tdsn")
 qqline(x)
 
-DALY
-tf <- is.na(DALY)
-D <- DALY[!tf]
 
-boxplot(E, D)
-qqplot(E, D)
+boxplot(E, DALY[!(is.na(DALY))])
 qqplot(E, ENVHEALTH[!(is.na(ENVHEALTH))])
+qqplot(WATER_E[!(is.na(WATER_E))], AIR_E[!(is.na(AIR_E))])
+qqplot(B, ECOSYSTEM[!(is.na(ECOSYSTEM))])
+boxplot(C, ENVHEALTH[!(is.na(ENVHEALTH))])
 
-
+#Exercise 2
