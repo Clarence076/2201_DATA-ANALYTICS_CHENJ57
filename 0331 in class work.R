@@ -43,3 +43,7 @@ plot(svmfit,dat)
 svmfit <- svm(y~., data=dat, kernel="linear", cost=1)
 summary(svmfit)
 plot(svmfit ,dat)
+
+
+
+
